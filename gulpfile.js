@@ -36,7 +36,7 @@ function serve(openBrowser){
     var reload = debounce(browserSync.reload, 1000);
     gulp.watch(['src/*.js', 'src/shaders/*.glsl'], ['build']);
     gulp.watch(['demos/*.jade'], ['buildHtml']);
-    gulp.watch(['demos/gfx/*/*.png', 'demos/*.css'], ['copyAssets']);
+    gulp.watch(['demos/gfx/*/*.png', 'demos/*.{js,css}'], ['copyAssets']);
     gulp.watch(['**/*'], {cwd: 'build/dev/demos/'}, reload);
     gulp.watch(['**/*'], {cwd: 'dist/tests/'}, reload);
 }

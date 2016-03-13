@@ -87,6 +87,10 @@ canvas {
     padding: 0.25em;
 }
 
+.normalmap-demo-embedded .normalmap-demo-mobile-nav  {
+    margin: 0.5em auto;
+}
+
 .small-only {
     display: none;
 }

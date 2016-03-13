@@ -1,6 +1,5 @@
 function Shader(gl, vertexSource, fragmentSource){
     this.gl = gl;
-    console.log(fragmentSource);
     this.program = buildProgram(gl, vertexSource, fragmentSource);
     this.uniformInfos = reflectUniformInformation(gl, this.program);
     this.uniformValues = Object.create(null);

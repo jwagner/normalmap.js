@@ -26,7 +26,6 @@ function normalmap(options){
 
     var defines = {};
     defineDefines(defines, options);
-    if(options.debug) { console.log('defines', defines); }
 
     var normalMapWidth = options.normalMap.naturalWidth || options.normalMap.width;
     var normalMapHeight = options.normalMap.naturalHeight || options.normalMap.height;
@@ -186,14 +185,10 @@ function normalmap(options){
         fboType = gl.UNSIGNED_BYTE;
         var extSRGB = gl.getExtension('EXT_sRGB');
         if(extSRGB){
-            console.log('sRGB present');
             fbo = new FBO(gl, undefined, undefined, gl.UNSIGNED_BYTE, extSRGB.SRGB_ALPHA_EXT);
             if(fbo.supported) {
-                console.log('sRGB supported');
                 fboFormat = extSRGB.SRGB_ALPHA_EXT;
-            }
-            else{
-                console.log('sRGB FBO not supported');
+                return fbo;
             }
         }
         return new FBO(gl);

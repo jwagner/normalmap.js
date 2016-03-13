@@ -15,7 +15,6 @@
 
 // hacky hacky hack hack used to go single pass for some demos
 window.isMobile =  /Mobile|android/i.test(navigator.userAgent);
-console.log('isMobile', window.isMobile);
 
 function normalize(p){
     var scale = 1/Math.sqrt(p[0]*p[0]+p[1]*p[1]+p[2]*p[2]);
@@ -92,17 +91,6 @@ function bindLight(lights, options){
         }
     }
 
-    if(window.location.hash === '#embed') {
-        var usedHeight = $(canvas).offset().top + canvas.clientHeight;
-        if(usedHeight > window.innerHeight){
-            var scale = (canvas.height - (usedHeight - window.innerHeight))/canvas.height;
-            canvas.width = ~~(canvas.width*scale);
-            canvas.height = ~~(canvas.height*scale);
-            lights.resize();
-        }
-    }
-
-
     resize();
     render(canvas.width*0.25, canvas.height*0.1);
 }
@@ -127,6 +115,9 @@ if(window.location.hash == '#embed') {
     $('body').addClass('normalmap-demo-embedded');
     $('.normalmap-demo-nav a').each(function(){
         $(this).attr('href', $(this).attr('href') + '#embed');
+    });
+    $('.normalmap-demo-mobile-nav option').each(function(){
+        $(this).attr('value', $(this).attr('value') + '#embed');
     });
 }
 
