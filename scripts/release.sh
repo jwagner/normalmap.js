@@ -28,4 +28,5 @@ gulp release
 git tag -a "v$version" -m "release $version"
 git push origin "v$version"
 npm publish
-git checkout master
+hub release create -a "build/zip/normalmap-$version.zip" "v$version"
+#git checkout master
