@@ -172,6 +172,11 @@ gulp.task('release', ['buildRelease'], function(done){
     });
 });
 
+gulp.task('dist', ['buildRelease'], function(){
+    return gulp.src(['build/release/*.js'])
+        .pipe(gulp.dest('dist/'));
+});
+
 gulp.task('zip', function(){
     // Symlink handling in gulp/vinyl-fs is not helpful
     // so I'm using yazl directly
