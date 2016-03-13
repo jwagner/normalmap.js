@@ -15,8 +15,8 @@ mv _package.json package.json
 gulp zip dist
 
 git add -f dist/
-
 git diff
+git status
 echo "Confirm release with YES"
 read confirmation
 if [ "$confirmation" != 'YES' ]; then
