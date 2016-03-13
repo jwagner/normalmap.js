@@ -1,0 +1,27 @@
+extends ./_base.jade
+
+block beforeHead
+    - var demo = 'Stone Effect';
+
+block afterHeader
+    p Based on the Lucy Model by <a href="http://graphics.stanford.edu/data/3Dscanrep/">Stanford University Computer Graphics Laboratory</a>
+
+block content
+    canvas#c
+
+block afterScripts
+    script.
+        jQuery(function($){
+            $('#c')
+                .normalmap({
+                    normalMap: '#{fileRev('gfx/lucy/normal.png')}',
+                    ambientMap: '#{fileRev('gfx/lucy/ambient.png')}',
+                    metalness: 0.0,
+                    roughness: 0.7,
+                    baseColor: normalmap.vec3(0.3, 0.3, 0.3),
+                    singlePass: true,
+                    ambient: 0.25
+                }).then(function(lights){
+                    bindLight(lights, { color: normalmap.vec3(1, 1, 1)});
+                });
+        });

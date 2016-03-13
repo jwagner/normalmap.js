@@ -1,0 +1,28 @@
+extends ./_base.jade
+
+block beforeHead
+    - var demo = 'Platinum Effect';
+
+block afterHeader
+    p Based on the Dragon Model by <a href="http://graphics.stanford.edu/data/3Dscanrep/">Stanford University Computer Graphics Laboratory</a>
+
+block content
+    canvas#c
+
+block afterScripts
+    script. 
+        jQuery(function($){
+            $('#c')
+                .normalmap({
+                    normalMap: '#{fileRev('gfx/dragon/normal.png')}',
+                    ambientMap: '#{fileRev('gfx/dragon/ambient.png')}',
+                    antiAliasing: true,
+                    metalness: 1.0,
+                    roughness: 0.2,
+                    baseColor: new Float32Array([0.672, 0.637, 0.585]),
+                    singlePass: isMobile,
+                    ambient: 0.9
+                }).then(function(lights){
+                    bindLight(lights, { color: normalmap.vec3(0.27, 0.24, 0.22)});
+                });
+        });

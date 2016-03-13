@@ -1,0 +1,23 @@
+.normalmap-demo-header
+    h1
+        small
+            a(href=meta.homepage)= name
+        | #{demo}
+    block afterHeader
+    //- h2 Under development - DO NOT SHARE THIS LINK.
+    -
+        var demos = [
+            ['Platinum Dragon', 'dragon'],
+            ['Stone Angel', 'lucy'],
+            ['Gold Buddah', 'buddah'],
+            ['Carbon Fiber', 'carbon'],
+            ['Helvetia Coin', 'index']
+        ];
+    ul.normalmap-demo-nav.large-only
+        - for demo in demos
+            li
+                a(href=demo[1]+'.html') #{demo[0]}
+    select(onchange='if(this.value) location.href=this.value').normalmap-demo-mobile-nav.small-only
+        option Change Demo
+        - for demo in demos
+            option(value=demo[1]+'.html') #{demo[0]}

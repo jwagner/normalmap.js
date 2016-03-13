@@ -1,0 +1,25 @@
+doctype html
+html(lang="en")
+    head
+        - var root = 'https://29a.ch/sandbox/2016/normalmap.js/'
+        - var name = 'normalmap.js'
+        block beforeHead
+        - var title = name + ' ' + demo
+        - var description = name + " is a library to create interactive lighting and material effects with JavaScript."
+        include _head.jade
+    body
+        include _header.jade
+        block content
+        script(src=fileRev('normalmap.js'))
+        script(src=fileRev('jquery.min.js'))
+        script(src=fileRev('jquery.normalmap.js'))
+        script(src=fileRev('demo.js'))
+        block afterScripts
+        if(release)
+            script
+                | var _gaq = _gaq || [];
+                | _gaq.push(['_setAccount', 'UA-5205069-2']);
+                | _gaq.push(['_setDomainName', '29a.ch']);
+                | _gaq.push(['_setSiteSpeedSampleRate', 50]);
+                | _gaq.push(['_trackPageview']);
+            script(src="//www.google-analytics.com/ga.js" async=true defer=true)

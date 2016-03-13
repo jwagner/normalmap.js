@@ -1,0 +1,32 @@
+extends ./_base.jade
+
+block beforeHead
+    - var demo = 'Pixel Lighting';
+
+block afterHeader
+    p Based on the Vilage Tileset by <a href="http://www.lostgarden.com/2006/07/more-free-game-graphics.html#links">Daniel Cook</a>
+
+block content
+    canvas#c
+
+block afterScripts
+    script.
+        var color = normalmap.vec3(0.05, 0.04, 0.035);
+        jQuery(function($){
+            $('#c')
+                .normalmap({
+                    normalMap: 'gfx/pixel/normal.png',
+                    baseColorMap: 'gfx/pixel/baseColor.png',
+                    ambientMap: 'gfx/pixel/ambient.png',
+                    materialMap: 'gfx/pixel/material.png',
+                    //materialMap: 'gfx/buddah/material.png',
+                    metalness: 1.0,
+                    roughness: 1.0,
+                    baseColor: normalmap.vec3(0.1, 0.1, 0.1),
+                    //- singlePass: true,
+                    //- antiAliasing:  true,
+                    ambient: 0.5
+                }).then(function(lights){
+                    bindLight(lights, { color: color, zOffset: 0.1});
+                });
+        });

@@ -1,0 +1,40 @@
+extends ./_base.jade
+
+block beforeHead
+    - var demo = 'Carbon Fiber Effect';
+
+block afterHeader
+    p Based on <em>the 2x Herringbone twill Carbon Fiber</em> Material by <a href="http://www.blendswap.com/blends/view/73805">ThorntonJStrolia</a></p>
+
+block content
+    canvas#carbon
+
+block afterScripts
+    script.
+        jQuery(function($){
+            var dp = window.devicePixelRatio || 1.0;
+            function resize(){
+                $('#carbon').prop({
+                    width: $('#carbon').width()*dp,
+                    height: $('#carbon').height()*dp
+                });
+            }
+            $(window).on('resize', resize);
+            resize();
+            $('#carbon')
+                .normalmap({
+                    normalMap: '#{fileRev('gfx/carbon/normal.png')}',
+                    materialMap: '#{fileRev('gfx/carbon/material.png')}',
+                    // ambient: 0,
+                    metalness: 0.5,
+                    roughness: 0.8,
+                    baseColor: normalmap.vec3(0.0001, 0.0001, 0.0002),
+                    singlePass: true,
+                    repeat: true
+                }).then(function(lights){
+                    bindLight(lights, {
+                        color: normalmap.vec3(0.75, 0.75, 0.75),
+                        zOffset: 4
+                    });
+                });
+            });

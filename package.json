@@ -1,0 +1,72 @@
+{
+  "name": "normalmap",
+  "version": "0.0.0",
+  "description": "Interactive lighting effects using normal maps.",
+  "homepage": "https://github.com/jwagner/normalmap.js/",
+  "main": "src/normalmap.js",
+  "repository": "jwagner/normalmap.js",
+  "keywords": [
+    "normalmap",
+    "light",
+    "3d",
+    "2d",
+    "material",
+    "effects"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jonas Wagner <jonas@29a.ch>",
+  "license": "MIT",
+  "devDependencies": {
+    "async-done": "^1.2.0",
+    "browser-sync": "^2.11.1",
+    "browserify": "^13.0.0",
+    "glob": "^7.0.3",
+    "gulp": "^3.9.1",
+    "gulp-data": "^1.2.1",
+    "gulp-imagemin": "^2.4.0",
+    "gulp-jade": "^1.1.0",
+    "gulp-newer": "^1.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-uglify": "^1.5.3",
+    "gulp-util": "^3.0.7",
+    "gulp-zip": "^3.2.0",
+    "imagemin-optipng": "^4.3.0",
+    "imagemin-pngquant": "^4.2.2",
+    "jquery": "^2.2.1",
+    "rsyncwrapper": "^1.0.0",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-fs": "^2.4.2",
+    "vinyl-source-stream": "^1.1.0",
+    "webdriverio": "^4.0.3",
+    "yazl": "^2.3.0"
+  },
+  "browserify": {
+    "transform": [
+      [
+        "stringify",
+        {
+          "appliesTo": {
+            "includeExtensions": [
+              ".glsl",
+              ".frag",
+              ".vert"
+            ]
+          }
+        }
+      ],
+      "bulkify"
+    ]
+  },
+  "files": [
+    "src",
+    "doc"
+  ],
+  "dependencies": {
+    "bulkify": "^1.1.1",
+    "debounce": "^1.0.0",
+    "stringify": "^5.0.0"
+  }
+}

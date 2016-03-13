@@ -1,0 +1,36 @@
+{
+  "name": "normalmap",
+  "description": "Interactive lighting effects using normal maps.",
+  "main": "dist/normalmap.js",
+  "authors": [
+    "Jonas Wagner <jonas@29a.ch>"
+  ],
+  "repository": "jwagner/normalmap.js",
+  "license": "MIT",
+  "keywords": [
+    "normalmap",
+    "light",
+    "3d",
+    "2d",
+    "material",
+    "effects"
+  ],
+  "moduleType": [
+    "amd",
+    "globals",
+    "node"
+  ],
+  "homepage": "https://github.com/jwagner/normalmap.js/",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "blender",
+    "demos",
+    "logo",
+    "dist",
+    "build",
+    "tests",
+    "releases"
+  ]
+}

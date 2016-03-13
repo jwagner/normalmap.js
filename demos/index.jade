@@ -1,0 +1,31 @@
+extends ./_base.jade
+
+block beforeHead
+    - var demo = 'Metal Coin Effect';
+
+block afterHeader
+    p Swiss franc coin captured by myself
+
+block content
+    //- a(href='https://github.com/jwagner/normalmap.js/')
+        //- canvas#logo
+    canvas#c
+
+block afterScripts
+    script.
+        jQuery(function($){
+            var options = {
+                color: normalmap.vec3(0.7, 0.7, 0.7)
+            };
+            $('#c').normalmap({
+                normalMap: '#{fileRev('gfx/coin/normal.png')}',
+                baseColor: normalmap.vec3(0.66, 0.629, 0.56),
+                ambient: 0,
+                metalness: 0.95,
+                roughness: 0.5,
+                singlePass: true
+            }).then(function(lights){
+                bindLight(lights, options);
+            });
+            // logo(options);
+        });
