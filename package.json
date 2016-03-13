@@ -41,6 +41,7 @@
     "vinyl-fs": "^2.4.2",
     "vinyl-source-stream": "^1.1.0",
     "webdriverio": "^4.0.3",
+    "debounce": "^1.0.0",
     "yazl": "^2.3.0"
   },
   "browserify": {
@@ -66,7 +67,6 @@
   ],
   "dependencies": {
     "bulkify": "^1.1.1",
-    "debounce": "^1.0.0",
     "stringify": "^5.0.0"
   }
 }
