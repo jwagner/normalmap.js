@@ -6,7 +6,8 @@ if [ -z "$version" ]; then
 fi
 
 echo $version
-git checkout release
+
+git checkout --detach
 
 jq ".version=\"$version\"" < package.json > _package.json
 mv _package.json package.json
