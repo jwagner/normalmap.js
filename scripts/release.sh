@@ -21,7 +21,7 @@ if [ "$confirmation" != 'YES' ]; then
 fi
 git commit -am "$version"
 gulp release
-git tag -a "v$version"
+git tag -a "v$version" -m "release $version"
 git push origin "v$version"
 npm publish
 git checkout master
