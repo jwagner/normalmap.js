@@ -19,6 +19,7 @@ if [ "$confirmation" != 'YES' ]; then
     echo "Ok, maybe not."
     exit
 fi
+git add -f dist/
 git commit -am "$version"
 gulp release
 git tag -a "v$version" -m "release $version"
