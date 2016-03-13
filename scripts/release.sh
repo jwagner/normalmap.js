@@ -14,7 +14,7 @@ mv _package.json package.json
 
 gulp zip dist
 
-git add -f dist/
+git add -f dist/ package.json
 git diff
 git status
 echo "Confirm release with YES"
