@@ -7,10 +7,10 @@ fi
 
 echo $version
 git checkout release
-node -e "p=require('./package.json');p.version='$version';\
-require('fs').writeFileSync('package.json', JSON.stringify(p, undefined, '  '));"
-node -e "p=require('./bower.json');p.version='$version';\
-require('fs').writeFileSync('bower.json', JSON.stringify(p, undefined, '  '));"
+
+jq ".version=\"$version\"" < package.json > _package.json
+mv _package.json package.json
+
 gulp zip dist
 git diff
 echo "Confirm release with YES"
@@ -19,8 +19,9 @@ if [ "$confirmation" != 'YES' ]; then
     echo "Ok, maybe not."
     exit
 fi
+git commit -am "$version"
 gulp release
 git tag -a "v$version"
 git push origin "v$version"
-npm release
-g checkout master
+npm publish
+git checkout master
