@@ -1,6 +1,6 @@
 {
   "name": "normalmap",
-  "version": "0.0.0",
+  "version": "0.0.2",
   "description": "Interactive lighting effects using normal maps.",
   "homepage": "https://github.com/jwagner/normalmap.js/",
   "main": "src/normalmap.js",
