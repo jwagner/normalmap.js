@@ -4,11 +4,9 @@ block beforeHead
     - var demo = 'Metal Coin Effect';
 
 block afterHeader
-    p Swiss franc coin captured by myself
+    p Swiss franc coin, captured by me.
 
 block content
-    //- a(href='https://github.com/jwagner/normalmap.js/')
-        //- canvas#logo
     canvas#c
 
 block afterScripts
@@ -27,5 +25,4 @@ block afterScripts
             }).then(function(lights){
                 bindLight(lights, options);
             });
-            // logo(options);
         });

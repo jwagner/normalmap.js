@@ -1,23 +1,29 @@
 .normalmap-demo-header
     h1
-        small
-            a(href=meta.homepage)= name
-        | #{demo}
+        a(href=meta.homepage)= name
+        small Javascript normalmap effects library powered by WebGL.
+         
+        //-small #{demo}
     block afterHeader
-    //- h2 Under development - DO NOT SHARE THIS LINK.
     -
         var demos = [
-            ['Platinum Dragon', 'dragon'],
-            ['Stone Angel', 'lucy'],
-            ['Gold Buddah', 'buddah'],
-            ['Carbon Fiber', 'carbon'],
-            ['Helvetia Coin', 'index']
+            ['Platinum Dragon', 'dragon.html'],
+            ['Stone Angel', 'lucy.html'],
+            ['Gold Buddah', 'buddah.html'],
+            ['Carbon Fiber', 'carbon.html'],
+            ['Helvetia Coin', root],
         ];
     ul.normalmap-demo-nav.large-only
         - for demo in demos
             li
-                a(href=demo[1]+'.html') #{demo[0]}
+                a(href=demo[1]) #{demo[0]}
+
     select(onchange='if(this.value) location.href=this.value').normalmap-demo-mobile-nav.small-only
         option Change Demo
         - for demo in demos
-            option(value=demo[1]+'.html') #{demo[0]}
+            option(value=demo[1]) #{demo[0]}
+            
+    a.no-text-decoration(href='https://github.com/jwagner/normalmap.js/')
+        .button
+            include github_logo.svg
+            span.button-text View on Github

@@ -1,7 +1,7 @@
 doctype html
 html(lang="en")
     head
-        - var root = 'https://29a.ch/sandbox/2016/normalmap.js/'
+        - var root = release ? 'https://29a.ch/sandbox/2016/normalmap.js/' : '/'
         - var name = 'normalmap.js'
         block beforeHead
         - var title = name + ' ' + demo

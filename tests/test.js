@@ -26,7 +26,7 @@ function test(name, body){
         return body(canvas);
     }).then(function(){
         var difference = diff(canvas, expected);
-        var failed = difference.total > 0.005;
+        var failed = difference.total > 0.1;
         if(!failed) nTestsSucceeded++;
         $('body')
             .append(
@@ -85,7 +85,7 @@ function diff(a, b){
     ctx.putImageData(bImgData, 0, 0);
     return {
         canvas: c,
-        total: total/(c.width*c.height)
+        total: Math.sqrt(total/(c.width*c.height))
     };
 }
 

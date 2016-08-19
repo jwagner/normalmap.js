@@ -24,7 +24,7 @@ Did you find a cool use for normalmap.js? [Let me know!](https://29a.ch/about)
 
 # Example
 ```javascript
-var lights = normalMap({
+var lights = normalmap({
     canvas: canvas,
     normalMap: normalMap,
     baseColor: [0.5, 0.4, 0.5]
@@ -70,7 +70,7 @@ Normalmap.js should work in all browsers that [supports WebGL](http://caniuse.co
 [NormalMap-Online](http://cpetry.github.io/NormalMap-Online/)
 
 # Questions?
-Create a github issue or tweet to @29a_ch and please be a bit patient. :)
+Create a github issue or tweet to [@29a_ch](https://twitter.com/29a_ch) and please be a bit patient. :)
 
 # License
 Copyright © 2016 Jonas Wagner.

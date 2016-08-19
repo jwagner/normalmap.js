@@ -1,5 +1,5 @@
 body {
-    color: #fff;
+    color: #ccc;
     font-family: 'Open Sans', sans-serif;
     font-size: 16px;
     font-weight: 400;
@@ -10,13 +10,17 @@ body {
 a {
     color: #fff;
 }
+p a {
+    color: #ddd;
+}
 h1 {
-    font-size: 30px;
+    font-size: 32px;
     margin-top: 0;
     font-weight: 300;
 }
 h1 small {
     display: block;
+    font-size: 0.66em;
 }
 h1 a {
     text-decoration: none;
@@ -56,14 +60,42 @@ canvas {
   z-index: -1;
 }
 
+.no-text-decoration {
+    text-decoration: none;
+}
+
+.button {
+    display: inline-block;
+    cursor: pointer;
+    background: #eee;
+    background-image: linear-gradient(#fcfcfc, #eee);
+    color: #333;
+    line-height: 21px;
+    padding: 4px;
+    box-sizing: border-box;
+    border: 1px solid #d5d5d5;
+    border-radius: 3px;
+}
+
+.button > * {
+    vertical-align: middle;
+}
+
+.normalmap-demo-nav {
+    margin: 0;
+    padding: 0;
+    display: inline;
+}
+
 .normalmap-demo-nav li {
     display: inline;
-    padding: 1em;
+    padding: 0.5em;
 }
 
 .normalmap-demo-header {
     background: rgba(0, 0, 0, 0.5);
     padding: 1em;
+    border-bottom: 1px solid #666;
 }
 .normalmap-demo-embedded {
     overflow: hidden;
@@ -95,9 +127,16 @@ canvas {
     display: none;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 800px) {
     .small-only {
         display: block;
+    }
+    h1 small {
+        display: block;
+        font-size: 0.33em;
+    }
+    select.small-only {
+        display: inline-block;
     }
     .large-only {
         display: none;
@@ -115,6 +154,8 @@ canvas {
     }
     .normalmap-demo-mobile-nav {
         display: block;
+        height: 32px;
+        vertical-align: top;
         margin: auto;
         padding: 0.5em;
         background: #333;
