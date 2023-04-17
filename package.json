@@ -44,7 +44,7 @@
     "vinyl-buffer": "^1.0.0",
     "vinyl-fs": "^2.4.2",
     "vinyl-source-stream": "^1.1.0",
-    "webdriverio": "^4.14.4",
+    "webdriverio": "^8.8.2",
     "yazl": "^2.5.1"
   },
   "browserify": {
